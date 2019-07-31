@@ -10,7 +10,7 @@ $action = JRoute::_("index.php?option=com_rw&amp;view=schedule&amp;Itemid={$item
 $date = JFactory::getApplication()->input->getString('date', JDate::getInstance("+3 hour")->format("d.m.Y"));
 ?>
 
-<form action="<?php echo $action;?>" method="get">
+<form action="<?php echo $action;?>" method="get" name="raspSearch">
     <div class="form-row">
         <div class="col-lg-4">
             <select name="from" id="rasp_from" class="form-control mt-1 mb-1" style="width:auto;">
