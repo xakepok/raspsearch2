@@ -7,7 +7,8 @@ require_once JPATH_ADMINISTRATOR . '/components/com_rw/helpers/rw.php';
 $domain = $params->get('domain', 'https://www.joomla.org');
 $itemID = RwHelper::getMenuItemId('schedule');
 $action = JRoute::_("index.php?option=com_rw&amp;view=schedule&amp;Itemid={$itemID}");
-$date = JFactory::getApplication()->input->getString('date', JDate::getInstance("+3 hour")->format("d.m.Y"));
+$dat = JFactory::getApplication()->input->getString('date', JDate::getInstance("+3 hour")->format("d.m.Y"));
+$dat = JDate::getInstance($dat)->format("d.m.Y");
 ?>
 
 <form action="<?php echo $action;?>" method="get" name="raspSearch">
@@ -24,7 +25,7 @@ $date = JFactory::getApplication()->input->getString('date', JDate::getInstance(
         </div>
         <div class="col-lg-2">
             <div class="input-group date">
-                <input type="text" name="date" placeholder="<?php echo JText::sprintf('MOD_RASPSEARCH_FORM_DATE');?>" value="<?php echo $date;?>" class="form-control w-100 mt-1"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                <input type="text" name="date" placeholder="<?php echo JText::sprintf('MOD_RASPSEARCH_FORM_DATE');?>" value="<?php echo $dat;?>" class="form-control w-100 mt-1"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
             </div>
         </div>
         <div class="col-lg-2">
